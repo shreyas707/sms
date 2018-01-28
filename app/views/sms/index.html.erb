@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sms.each do |sm| %>
+      <tr>
+        <td><%= sm.number %></td>
+        <td><%= sm.message %></td>
+        <td><%= link_to 'Show', sm %></td>
+        <td><%= link_to 'Edit', edit_sm_path(sm) %></td>
+        <td><%= link_to 'Destroy', sm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sm', new_sm_path %>
